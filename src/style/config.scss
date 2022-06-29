@@ -1,0 +1,96 @@
+* {
+	transition: 500ms;
+}
+
+.settings {
+	background-color: var(--background3);
+	padding: 10px;
+	position: absolute;
+	border-radius: 10px;
+	left: 50%;
+	top: 20vh;
+	transform: translateX(-50%);
+	z-index: 5;
+	width: calc(100% - 40px);
+	max-width: 500px;
+}
+i {
+	color: var(--background1);
+}
+.settings-icon,
+.trash-icon {
+	overflow: hidden;
+	background: var(--main-color);
+	width: 16px;
+	padding: 3px 11px;
+	border-radius: 100px;
+	margin-bottom: 15px;
+	height: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+.settings-icon:hover {
+	width: 80px;
+}
+.settings-icon:hover > i.bi-gear-fill::after {
+	content: 'Settings';
+	margin-left: 5px;
+}
+i.bi-gear-fill,
+i.bi-trash-fill {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+.trash-icon:hover > i.bi-trash-fill::after {
+	content: 'Trash';
+	margin-left: 5px;
+}
+.close-settings {
+	cursor: pointer;
+	position: absolute;
+	transform: scale(1.7);
+	top: 40px;
+	left: calc(100% - 40px);
+}
+.normal-icon {
+	color: var(--main-color);
+}
+.theme {
+	cursor: pointer;
+	width: 200px;
+	transition: 500ms;
+	padding: 8px;
+	border-radius: 10px;
+	p {
+		margin: 0px;
+	}
+}
+.theme:hover {
+	background: #7676761a;
+}
+#select-theme {
+	background: none;
+	border-radius: 50px;
+}
+option {
+	background: var(--background1);
+}
+.options {
+	display: flex;
+}
+
+// Deleted Quizzes
+.deleted-quizzes-box {
+	z-index: 2;
+	background: var(--background3);
+	position: absolute;
+	top: 50px;
+	padding: 10px 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 500px;
+	border-radius: 20px;
+}

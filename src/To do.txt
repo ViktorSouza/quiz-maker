@@ -1,0 +1,4 @@
+-Make an option that the user can put a quiz inside of a list and then play it
+-Make the edit option viable //Done
+-Fix the css overflow error
+-Fix the restart option viable

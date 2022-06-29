@@ -1,0 +1,183 @@
+.quizzes {
+	// display: flex;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 20px;
+	flex-direction: column-reverse;
+	max-height: calc(100% - 89px);
+}
+.quizzes-padding {
+	overflow-y: scroll;
+	overflow-x: hidden;
+	border-radius: 10px;
+	max-height: calc(100vh - 89px);
+	padding-right: 3px;
+	box-sizing: border-box;
+}
+.deleted-quiz {
+	background: var(--background4) !important;
+}
+.quiz, .deleted-quiz {
+	padding: 5px 10px;
+
+	border-radius: 10px;
+	background: var(--background2);
+	animation: animationQuiz 0.5s both cubic-bezier(0.8, 0, 0.165, 1);
+}
+
+.quiz * {
+	margin: 10px 5px;
+}
+.accurance {
+	display: flex;
+	align-items: center;
+}
+
+.percentagem {
+	background: var(--background1);
+	height: 10px;
+	width: 200px;
+	border-radius: 5px;
+	position: relative;
+}
+
+.percentagem-stick {
+	background-color: var(--main-color);
+	height: 100%;
+	margin: 0px;
+	border-radius: 5px;
+}
+
+.percentagem-box {
+	position: absolute;
+	top: -25px;
+	font-size: 10px;
+	margin: 0px;
+}
+
+.percentagem-box-number {
+	color: var(--background1);
+	background: var(--main-color);
+	margin: 0px !important;
+	border-radius: 7px;
+	padding: 2.5px 5px;
+}
+
+.percentagem-box-pointer {
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid var(--main-color);
+	position: absolute;
+	top: 9px;
+	left: 50%;
+	margin: 10px -5px;
+}
+.collapsible {
+	cursor: pointer;
+}
+.bold-quiz {
+	font-weight: bold;
+}
+
+@for $i from 1 through 10 {
+	.quiz:nth-child(#{$i}n) {
+		animation-delay: #{($i) * 0.1}s;
+	}
+}
+
+@keyframes animationQuiz {
+	0% {
+		transform: scale(0);
+	}
+	50% {
+		transform: scale(1.03);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+// HERE COME THE STYLES FOR THE TEXT IN THE QUIZ'S BOTTOM LEFT CORNER
+.pop-up-alternative {
+	animation: popUpAlternative 0.3s;
+}
+.pop-up-right-answer {
+	background-color: var(--background2);
+	position: absolute;
+	left: 50%;
+	width: 200px;
+	transform: translateX(-50%);
+	top: 230px;
+	padding: 20px;
+	border-radius: 10px;
+}
+
+@keyframes popUpAlternative {
+	0%,
+	20%,
+	40%,
+	60%,
+	80%,
+	100% {
+		transform: translateX(2px);
+	}
+	10%,
+	30%,
+	50%,
+	70%,
+	90% {
+		transform: translateX(-2px);
+	}
+}
+
+.input-quiz,
+#wrong-anwers-div {
+	position: relative;
+	* {
+		outline: none;
+	}
+}
+.input-text-form {
+	border-radius: 8px;
+}
+.label-text-form {
+	font-size: 13px !important;
+	position: absolute;
+	font-weight: 100;
+	top: 4px;
+	left: 0px;
+	transition: 500ms;
+	cursor: text;
+}
+.input-text-form:focus ~ .label-text-form,
+.input-text-form:not(:placeholder-shown).input-text-form:not(:focus)
+	~ .label-text-form {
+	font-size: 8px !important;
+	background: var(--background1) !important;
+	top: -7px;
+	padding: 0px 5px;
+}
+.delete-confirmation {
+	z-index: 3;
+	background: var(--background3);
+	width: 200px;
+	padding: 0px 20px 20px 20px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 10px;
+}
+.delete-button {
+	background: var(--error) !important;
+	color: #fff !important;
+}
+.advise-delete-box {
+	font-size: 13px;
+}
+.delete-button-quiz {
+	background: var(--red-low-opacity) !important;
+	color: var(--main-text-color) !important;
+}
